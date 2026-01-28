@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de notas</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <header>
+        <h1>Calculadora de notas da Faculdade</h1>
+    </header>
+    <main class="container">
+        <section class="card">
+            <h2>AV1 - 4 provas de 10 questões (40% da nota)</h2>
+            <label for="aol1-input">AOL 1</label>
+            <input type="number" placeholder="0 a 10" class="neo-input" id="aol1-input">
+
+            <label for="aol2-input">AOL 2</label>
+            <input type="number"placeholder="0 a 10" class="neo-input" id="aol2-input">
+
+            <label for="aol3-input">AOL 3</label>
+            <input type="number"placeholder="0 a 10" class="neo-input" id="aol3-input">
+
+            <label for="aol4-input">AOL 4</label>
+            <input type="number"placeholder="0 a 10" class="neo-input" id="aol4-input">
+
+            <input type="button" value="calcular AV1" class="btn-calc" id="btnAv1">
+
+            <div class="msg-input" id="msgAv1"></div>
+        </section>
+
+        <section class="card">
+            <h2>AV2 - Prova de 0 a 10 (60% da nota)</h2>
+            <label for="multiplaInput">Múltipla escolha</label>
+            <input type="number" placeholder="0 a 6" class="neo-input" id="multiplaInput">
+
+            <label for="Objetivainput">Objetiva</label>
+            <input type="number" placeholder="0 a 4" class="neo-input" id="Objetivainput">
+
+            <input type="button" value="calcular AV2" class="btn-calc" id="btnAv2">
+
+            <div class="msg-input" id="msgAv2"></div>
+        </section>
+
+        <section class="card">
+            <h2>AF (soma da media + final)</h2>
+            <label for="af-input">Nota da AF</label>
+            <input type="number" placeholder="0 a 10" class="neo-input" id="afInput">
+
+
+            <input type="button" value="calcular AF" class="btn-calc" id="btnAf">
+
+            <div class="msg-input" id="msgAf"></div>
+
+            <p>
+                ATENÇÃO! 
+                    Nota Final igual ou superior a 7,0: APROVADO.<br>
+                    Nota Final maior ou igual a 4,0 e menor que 7,0: poderá fazer a Avaliação Final.<br>
+                    Nota Final inferior a 4: REPROVADO.
+            </p>
+        </section>
+    </main>
+    <script src="JS/script.js"></script>
+</body>
+</html>

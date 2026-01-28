@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+:root {
+    --cor0: #2c313c;
+    --cor1: #21252d;
+    --cor2: #373d4b;
+    --cor3: #61dafb;
+    --cor4: #a29bfe;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--cor0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+}
+
+header {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1 {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2.2em;
+    font-style: italic;
+    text-shadow: 4px 3px 10px rgba(0, 0, 0, 0.404);
+}
+
+.container {
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.card h2 {
+    border-left: 10px solid var(--cor4);
+    margin-bottom: 10px;
+    text-align: center;
+    color: #61dafb;
+    font-size: 1.5em;
+}
+
+.card {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 30px;
+    padding: 50px;
+    box-shadow: 10px 10px 20px var(--cor1), -10px -10px 20px var(--cor2);
+
+    display: flex;
+    flex-flow: column;
+}
+
+.card label {
+    margin-bottom: 8px;
+    color: var(--cor4);
+    font-weight: bold;
+}
+
+.neo-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--cor0);
+    padding: 10px;
+    color: #ffffff;
+    box-shadow: inset 5px 5px 10px var(--cor1),
+    inset -5px -5px 10px var(--cor2);
+    margin-bottom: 20px;
+}
+
+.neo-input::-webkit-inner-spin-button,
+.neo-input::-webkit-outer-spin-button {
+    appearance: none;
+}
+
+.btn-calc {
+    align-self: center;
+    border: none;
+    background: var(--cor3);
+    border-radius: 15px;
+    padding: 10px 20px;
+    color: var(--cor1);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1em;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-calc:hover {
+    background: var(--cor4);
+    box-shadow: 0px 0px 15px var(--cor4);
+    transform: translateY(-2px);
+}
+
+.msg-input {
+    margin-top: 20px;
+    color: var(--cor4);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.418);
+}
+
+p {
+    margin-top: 20px;
+    color: var(--cor4);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1em;
+    text-align: justify;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.418);
+}
