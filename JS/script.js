@@ -50,7 +50,14 @@ function aolResult() {
        let multiplaInput = document.querySelector('#multiplaInput')
        let Objetivainput = document.querySelector('#Objetivainput')
        let msgAv2 = document.querySelector('#msgAv2')
+       let notaAOL = aolResult()
        msgAv2.textContent = ''
+
+       if(notaAOL === undefined || isNaN(notaAOL)) {
+        msgAv2.textContent = 'Preencha as AOLS corretamente antes de calcular a AV2.'
+        msgAv2.style.color = 'darkred'
+        return
+       }
 
        if(multiplaInput.value.trim() == '' || Objetivainput.value.trim() == '') {
         msgAv2.textContent = 'preencher todos os campos antes de finalizar.'
@@ -63,17 +70,17 @@ function aolResult() {
        let multipla = Number(multiplaInput.value)
        let Objetiva = Number(Objetivainput.value)
 
-       if(multipla > 6 || multipla < 0 ||
-        Objetiva > 4 || Objetiva < 0) {
+       if(multipla > 6 || multipla < 0 || Objetiva > 4 || Objetiva < 0) {
         msgAv2.textContent = "A nota de múltipla escolha deve ser entre 0 e 6, enquanto a objetiva deve ser entre 0 e 4."
          msgAv2.style.color = 'darkred'
+         return
         } else {
             msgAv2.style.color = '#a29bfe'
         }
 
         let AV2nota = multipla + Objetiva
         let MediaAV2 = (multipla + Objetiva) * 0.6
-        let mediaGeral = MediaAV2 + aolResult()
+        let mediaGeral = MediaAV2 + notaAOL
         let status = mediaGeral >= 7 ? "APROVADO, parabéns." : "REPROVADO, leia as instruções para realizar a prova final."
 
         if(mediaGeral >= 7) {
@@ -93,7 +100,16 @@ function aolResult() {
         let afInput = document.querySelector('#afInput')
         let Af = Number(afInput.value)
         let msgAf = document.querySelector('#msgAf')
-        if(AV2result() < 4) {
+
+        let mediaGeral = AV2result()
+
+        if(mediaGeral === undefined || isNaN(mediaGeral)) {
+            msgAf.textContent = 'Preencha AV2 corretamente antes de calcular a nota final.'
+            msgAf.style.color = 'darkred'
+            return
+        }
+
+        if(mediaGeral < 4) {
             msgAf.textContent = 'Você não possui nota suficiente para realizar a final.'
             msgAf.style.color = 'darkred'
             return
@@ -101,7 +117,7 @@ function aolResult() {
             msgAf.style.color = 'darkgreen'
         }
 
-        let resultadoFinal = (AV2result() + Af) / 2
+        let resultadoFinal = (mediaGeral + Af) / 2
         let statusFinal = resultadoFinal >= 5 ?"APROVADO, parabéns" :"REPROVADO"
 
         if(resultadoFinal >= 5) {
